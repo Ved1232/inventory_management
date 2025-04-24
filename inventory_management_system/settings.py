@@ -76,12 +76,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'inventory_db',
-        'USER': 'postgres',
-        'PASSWORD': 'root',
+        'USER': 'inventory_user',
+        'PASSWORD': 'inventory_pass',
         'HOST': 'localhost',
         'PORT': '5432',
     }
 }
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
