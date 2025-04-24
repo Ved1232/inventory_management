@@ -1,0 +1,11 @@
+<div class="btn-group" role="group">
+    <a href="{% url 'inventory:product-detail' record.pk %}" class="btn btn-sm btn-outline-primary">
+        <i class="bi bi-eye"></i>
+    </a>
+    <a href="{% url 'inventory:product-edit' record.pk %}" class="btn btn-sm btn-outline-secondary">
+        <i class="bi bi-pencil"></i>
+    </a>
+    <a href="{% url 'inventory:product-delete' record.pk %}" class="btn btn-sm btn-outline-danger">
+        <i class="bi bi-trash"></i>
+    </a>
+</div>

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ object.name }}{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">{{ object.name }}</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <a href="{% url 'inventory:product-edit' object.pk %}" class="btn btn-primary me-2">
+            <i class="bi bi-pencil"></i> Edit
+        </a>
+        <a href="{% url 'inventory:product-delete' object.pk %}" class="btn btn-danger">
+            <i class="bi bi-trash"></i> Delete
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card mb-4">
+            {% if object.image %}
+            <img src="{{ object.image.url }}" class="card-img-top" alt="{{ object.name }}">
+            {% else %}
+            <div class="text-center py-5 bg-light">
+                <i class="bi bi-image" style="font-size: 3rem;"></i>
+                <p class="mt-2">No image available</p>
+            </div>
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ object.name }}</h5>
+                <p class="card-text">{{ object.description }}</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <strong>SKU:</strong> {{ object.sku }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Category:</strong> {{ object.category }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Price:</strong> ${{ object.price }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Quantity:</strong> {{ object.quantity }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Reorder Level:</strong> {{ object.reorder_level }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Status:</strong> 
+                        {% if object.status == "Out of Stock" %}
+                        <span class="badge bg-danger">{{ object.status }}</span>
+                        {% elif object.status == "Low Stock" %}
+                        <span class="badge bg-warning text-dark">{{ object.status }}</span>
+                        {% else %}
+                        <span class="badge bg-success">{{ object.status }}</span>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
