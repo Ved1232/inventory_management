@@ -28,10 +28,13 @@ A full-stack Inventory Management System built using **Django**, with secure **R
 ## 🛠️ Setup Instructions
 
 ### 1. Clone the repo
+```bash
+git clone https://github.com/Ved1232/inventory_management.git
+cd inventory_management
+
 ### 2. pip install django
 
 install other dependencies to start the project.
 setup pgadmin to view records.
-```bash
-git clone https://github.com/Ved1232/inventory_management.git
-cd inventory_management
+
+
