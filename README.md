@@ -28,7 +28,7 @@ A full-stack Inventory Management System built using **Django**, with secure **R
 ## 🛠️ Setup Instructions
 
 ### 1. Clone the repo
-###2. pip install django
+### 2. pip install django
 
 install other dependencies to start the project.
 setup pgadmin to view records.
